@@ -1,1 +1,59 @@
-<p>post works!</p>
+<h4>Crear Post </h4>
+<hr>
+<form class="col-md-5 ml-0 pl-0" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+
+    <div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Título</label>
+            <div class="col-8">
+
+                <input class="form-control" name="title" #title=ngModel type="text" placeholder="Título" [(ngModel)]="post.title" required pattern="[a-zA-Z]+">
+                <small *ngIf="!title.valid && title.touched" class="invalid-feedback d-block">Título no válido</small>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Content</label>
+            <div class="col-8">
+
+                <input class="form-control" type="text" placeholder="Contenido del blog..." name="content" #content=ngModel type="text" [(ngModel)]="post.content" required pattern="[a-zA-Z]+">
+                <small *ngIf="!title.valid && title.touched" class="invalid-feedback d-block">Contenido no válido</small>
+            </div>
+        </div>
+
+    </div>
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">Slug</label>
+        <div class="col-8">
+
+            <input class="form-control" type="text" placeholder="Slug..." name="slug" #slug=ngModel type="text" [(ngModel)]="post.slug" required pattern="[a-zA-Z]+">
+            <small *ngIf="!title.valid && title.touched" class="invalid-feedback d-block">Slug no válido</small>
+        </div>
+    </div>
+
+
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">&nbsp;</label>
+        <div class="input-group col-md-8">
+            <button type="submit" class="btn btn-outline-primary btn-block">
+        Guardar Post
+      </button>
+        </div>
+    </div>
+
+</form>
+
+<div class="container">
+    <div class="col-md-5">
+        <h5>Lista de Post</h5>
+        <ul>
+            <li>Post</li>
+            <li>Post</li>
+            <li>Post</li>
+            <li>Post</li>
+        </ul>
+    </div>
+</div>
