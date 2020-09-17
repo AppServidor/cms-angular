@@ -1,1 +1,37 @@
-<p>login works!</p>
+<h4>Crear Post </h4>
+<hr>
+<form class="col-md-5 ml-0 pl-0" #registerForm="ngForm" (ngSubmit)="onSubmit(registerForm)">
+
+    <div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Email</label>
+            <div class="col-8">
+
+                <input class="form-control" name="email" #email=ngModel type="text" [(ngModel)]="user.email" required pattern="^[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$">
+                <small *ngIf="!email.valid && email.touched" class="invalid-feedback d-block">Título no válido</small>
+            </div>
+        </div>
+
+        <div class="form-group row">
+            <label class="col-2 col-form-label">Password</label>
+            <div class="col-8">
+
+                <input class="form-control" type="password" name="password" #password=ngModel type="text" [(ngModel)]="user.password" required>
+                <small *ngIf="!password.valid && password.touched" class="invalid-feedback d-block">Debes introducir la password</small>
+            </div>
+        </div>
+
+    </div>
+
+
+    <div class="form-group row">
+        <label class="col-2 col-form-label">&nbsp;</label>
+        <div class="input-group col-md-8">
+            <button type="submit" class="btn btn-outline-primary btn-block">
+        Loguearme
+      </button>
+        </div>
+    </div>
+
+</form>

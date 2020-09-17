@@ -25,7 +25,7 @@ export class PostComponent implements OnInit {
           if (response.status == 'success'){
             form.reset();
           } else {
-            this.status = 'error'
+            this.status = 'error '
           }
       },
       error => { 

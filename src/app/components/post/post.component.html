@@ -18,7 +18,7 @@
             <div class="col-8">
 
                 <input class="form-control" type="text" placeholder="Contenido del blog..." name="content" #content=ngModel type="text" [(ngModel)]="post.content" required pattern="[a-zA-Z]+">
-                <small *ngIf="!title.valid && title.touched" class="invalid-feedback d-block">Contenido no válido</small>
+                <small *ngIf="!content.valid && content.touched" class="invalid-feedback d-block">Contenido no válido</small>
             </div>
         </div>
 
@@ -29,7 +29,7 @@
         <div class="col-8">
 
             <input class="form-control" type="text" placeholder="Slug..." name="slug" #slug=ngModel type="text" [(ngModel)]="post.slug" required pattern="[a-zA-Z]+">
-            <small *ngIf="!title.valid && title.touched" class="invalid-feedback d-block">Slug no válido</small>
+            <small *ngIf="!slug.valid && slug.touched" class="invalid-feedback d-block">Slug no válido</small>
         </div>
     </div>
 
